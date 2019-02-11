@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoginDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDB.dbo.Duration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Duration">
+    <Key>
+      <PropertyRef Name="Startdate" />
+      <PropertyRef Name="Enddate" />
+      <PropertyRef Name="ResourceId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Startdate" Type="datetime" Nullable="false" />
+    <Property Name="Enddate" Type="datetime" Nullable="false" />
+    <Property Name="ResourceId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDB.dbo.Laptoplist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Laptoplist">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+      <PropertyRef Name="Resource_Name" />
+    </Key>
+    <Property Name="ResourceId" Type="int" Nullable="false" />
+    <Property Name="Resource_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Availability" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDB.dbo.Mobilelist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Mobilelist">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+      <PropertyRef Name="Resource_Name" />
+      <PropertyRef Name="Availability" />
+    </Key>
+    <Property Name="ResourceId" Type="int" Nullable="false" />
+    <Property Name="Resource_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Availability" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LoginDBModelStoreContainer">
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Duration" EntityType="Self.Duration" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Duration].[Startdate] AS [Startdate], 
+    [Duration].[Enddate] AS [Enddate], 
+    [Duration].[ResourceId] AS [ResourceId], 
+    [Duration].[UserId] AS [UserId]
+    FROM [dbo].[Duration] AS [Duration]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Laptoplist" EntityType="Self.Laptoplist" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Laptoplist].[ResourceId] AS [ResourceId], 
+    [Laptoplist].[Resource_Name] AS [Resource_Name], 
+    [Laptoplist].[Availability] AS [Availability]
+    FROM [dbo].[Laptoplist] AS [Laptoplist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Mobilelist" EntityType="Self.Mobilelist" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Mobilelist].[ResourceId] AS [ResourceId], 
+    [Mobilelist].[Resource_Name] AS [Resource_Name], 
+    [Mobilelist].[Availability] AS [Availability]
+    FROM [dbo].[Mobilelist] AS [Mobilelist]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
