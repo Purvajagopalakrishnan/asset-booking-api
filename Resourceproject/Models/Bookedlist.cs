@@ -12,11 +12,12 @@ namespace Resourceproject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Duration
+    public partial class Bookedlist
     {
+        public int Id { get; set; }
         public System.DateTime Startdate { get; set; }
         public System.DateTime Enddate { get; set; }
-        public int ResourceId { get; set; }
-        public int UserId { get; set; }
+        public string Email { get; set; }
+        public int Resource_Id { get; set; }
     }
 }

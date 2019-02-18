@@ -168,14 +168,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BookResourceController.cs" />
+    <Compile Include="Controllers\CheckAvailabilityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\laptoplistController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ResourcedetailsController.cs" />
+    <Compile Include="Controllers\MobilelistController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTO\BookedlistDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Duration.cs">
+    <Compile Include="Models\Bookedlist.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Laptoplist.cs">

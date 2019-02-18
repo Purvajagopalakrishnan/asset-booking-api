@@ -9,41 +9,40 @@
     <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityType Name="Duration">
-    <Key>
-      <PropertyRef Name="Startdate" />
-      <PropertyRef Name="Enddate" />
-      <PropertyRef Name="ResourceId" />
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="Startdate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Enddate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ResourceId" Type="Int32" Nullable="false" />
-    <Property Name="UserId" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityContainer Name="LoginDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Users" EntityType="Self.User" />
-    <EntitySet Name="Durations" EntityType="Self.Duration" />
     <EntitySet Name="Laptoplists" EntityType="LoginDBModel.Laptoplist" />
     <EntitySet Name="Mobilelists" EntityType="LoginDBModel.Mobilelist" />
+    <EntitySet Name="Bookedlists" EntityType="LoginDBModel.Bookedlist" />
   </EntityContainer>
   <EntityType Name="Laptoplist">
     <Key>
       <PropertyRef Name="ResourceId" />
       <PropertyRef Name="Resource_Name" />
+      <PropertyRef Name="Resource_type" />
     </Key>
     <Property Name="ResourceId" Type="Int32" Nullable="false" />
-    <Property Name="Availability" Type="Int32" />
-    <Property Name="Resource_Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Resource_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Resource_type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Mobilelist">
     <Key>
       <PropertyRef Name="ResourceId" />
       <PropertyRef Name="Resource_Name" />
-      <PropertyRef Name="Availability" />
+      <PropertyRef Name="Resource_type" />
     </Key>
     <Property Name="ResourceId" Type="Int32" Nullable="false" />
-    <Property Name="Resource_Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Availability" Type="Int32" Nullable="false" />
+    <Property Name="Resource_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Resource_type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bookedlist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Startdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Enddate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Resource_Id" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

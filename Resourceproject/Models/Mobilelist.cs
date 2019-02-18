@@ -16,6 +16,6 @@ namespace Resourceproject.Models
     {
         public int ResourceId { get; set; }
         public string Resource_Name { get; set; }
-        public int Availability { get; set; }
+        public string Resource_type { get; set; }
     }
 }

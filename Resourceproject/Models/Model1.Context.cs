@@ -26,8 +26,8 @@ namespace Resourceproject.Models
         }
     
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Duration> Durations { get; set; }
         public virtual DbSet<Laptoplist> Laptoplists { get; set; }
         public virtual DbSet<Mobilelist> Mobilelists { get; set; }
+        public virtual DbSet<Bookedlist> Bookedlists { get; set; }
     }
 }

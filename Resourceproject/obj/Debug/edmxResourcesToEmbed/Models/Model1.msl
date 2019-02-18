@@ -11,21 +11,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Durations">
-      <EntityTypeMapping TypeName="LoginDBModel.Duration">
-        <MappingFragment StoreEntitySet="Duration">
-          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
-          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Laptoplists">
       <EntityTypeMapping TypeName="LoginDBModel.Laptoplist">
         <MappingFragment StoreEntitySet="Laptoplist">
+          <ScalarProperty Name="Resource_type" ColumnName="Resource_type" />
           <ScalarProperty Name="Resource_Name" ColumnName="Resource_Name" />
-          <ScalarProperty Name="Availability" ColumnName="Availability" />
           <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -33,9 +23,20 @@
     <EntitySetMapping Name="Mobilelists">
       <EntityTypeMapping TypeName="LoginDBModel.Mobilelist">
         <MappingFragment StoreEntitySet="Mobilelist">
-          <ScalarProperty Name="Availability" ColumnName="Availability" />
+          <ScalarProperty Name="Resource_type" ColumnName="Resource_type" />
           <ScalarProperty Name="Resource_Name" ColumnName="Resource_Name" />
           <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookedlists">
+      <EntityTypeMapping TypeName="LoginDBModel.Bookedlist">
+        <MappingFragment StoreEntitySet="Bookedlist">
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

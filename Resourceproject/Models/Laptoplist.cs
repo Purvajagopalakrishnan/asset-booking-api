@@ -15,7 +15,7 @@ namespace Resourceproject.Models
     public partial class Laptoplist
     {
         public int ResourceId { get; set; }
-        public Nullable<int> Availability { get; set; }
         public string Resource_Name { get; set; }
+        public string Resource_type { get; set; }
     }
 }
